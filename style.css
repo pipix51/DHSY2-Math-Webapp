@@ -1,0 +1,17 @@
+.demo-layout-transparent {
+  background: url("http://static.wixstatic.com/media/cefeb3_3d775e39c6024f963e8751d638f529b1.jpg_1024") center / cover;
+}
+
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+  opacity: 1;
+}
+
+.demo-layout-transparent .mdl-layout__content .mdl-button {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
