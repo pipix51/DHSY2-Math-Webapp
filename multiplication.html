@@ -4,6 +4,19 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+		<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+		<script type="text/javascript" src="https://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script>
+		<script>
+		$(function () {
+			$("div[class='dragx']").draggable({
+				containment: "#box",
+				scroll: false
+			});
+		});
+		</script>
 	</head>
 	<!-- Always shows a header, even in smaller screens. -->
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -26,4 +39,29 @@
 				
 			</div>
 		</main>
-	</div>
+
+	</div>		
+
+	<body>
+			<div id="squareblue"  class="dragx">
+				<center><p>a</p></center>
+			</div>
+			<div id="squarered"  class="dragx">
+				<center><p>a</p></center>
+			</div>
+			<div id="rectanglered" class="dragx">
+				<center><p>b</p></center>
+			</div>
+			<div id="rectanglegreen" class="dragx">
+				<center><p>b</p></center>
+			</div>
+			<div id="smallsquarered" class="dragx">
+				<center><p>c</p></center>
+			</div>
+			<div id="smallsquareyellow" class="dragx">
+				<center><p>c</p></center>
+			</div>
+
+	</body>
+
+</html>
