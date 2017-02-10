@@ -1,0 +1,53 @@
+
+#squareblue {
+   width: 210px; 
+   height: 210px; 
+   background: blue; 
+   border-width: 1px;
+   border-style: solid;
+}
+
+#squarered {
+   width: 210px; 
+   height: 210px; 
+   background: red; 
+   border-width: 1px;
+   border-style: solid;
+   cursor: pointer;
+}
+
+#rectanglered {
+   width: 210px; 
+   height: 42px;
+   background: red;
+   border-width: 1px;
+   border-style: solid;
+   cursor: pointer;
+}
+
+#rectanglegreen {
+   width: 42px; 
+   height: 210px;
+   background: green;
+   border-width: 1px;
+   border-style: solid;
+   cursor: pointer;
+}
+
+#smallsquarered {
+   width: 42px; 
+   height: 42px;
+   background: red;
+   border-width: 1px;
+   border-style: solid;
+   cursor: pointer;
+}
+
+#smallsquareyellow {
+   width: 42px; 
+   height: 42px;
+   background: yellow;
+   border-width: 1px;
+   border-style: solid;
+   cursor: pointer;
+}
