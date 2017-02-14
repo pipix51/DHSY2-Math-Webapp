@@ -1,0 +1,84 @@
+
+.squareblue {
+   width: 210px; 
+   height: 210px; 
+   background: blue; 
+   border-width: 1px;
+   border-style: solid;
+}
+
+.rectanglegreen {
+   width: 42px; 
+   height: 210px;
+   background: green;
+   border-width: 1px;
+   border-style: solid;
+   cursor: pointer;
+}
+
+.smallsquareyellow {
+   width: 42px; 
+   height: 42px;
+   background: yellow;
+   border-width: 1px;
+   border-style: solid;
+   cursor: pointer;
+}
+
+#header {
+	text-align: center;
+	position: relative;
+	top: 60px;
+	color: white; 
+}
+
+#small-header {
+	text-align: center;
+	position: relative;
+	top: 60px;
+	color: white; 
+	font-size: 32px;
+}
+
+#navbar {
+	background: #2196F3;
+}
+
+#title {
+	margin: 0px, 0px, 0px, 0px;
+	position: relative;
+	bottom: 24px;
+	background: #2196F3;
+	height: 200px;
+}
+
+.subtitle{
+	margin-left: 40px;
+	color: #2196F3;
+}
+
+.main-content{
+	margin-left: 40px;
+	font-size: 26px;
+}
+
+#form {
+	position: relative;
+	left: 40px;
+}
+
+#number {
+	max-width: 30px;
+}
+
+#unknown1 {
+	position: absolute;
+	top: 55px;
+	left: 30px;
+}
+
+#unknown2 {
+	position: absolute;
+	top: 55px;
+	left: 50px;
+}

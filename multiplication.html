@@ -1,29 +1,87 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+		<script rel="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script rel="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script rel="text/javascript" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<script>
+		$(function () {
+			$("div[id='dragx']").draggable({
+				scroll: false,
+				snap: true
+			});
+		});
+		</script>
 	</head>
+	
 	<!-- Always shows a header, even in smaller screens. -->
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<header class="mdl-layout__header">
+		<header class="mdl-layout__header" id="navbar">
 			<div class="mdl-layout__header-row">
 			<!-- Title -->
 			<span class="mdl-layout-title">Y2DHS Math Webapp</span>
 			<!-- Add spacer, to align navigation to the right -->
 			<div class="mdl-layout-spacer"></div>
 			<!-- Navigation. We hide it in small screens. -->
-			<nav class="mdl-navigation mdl-layout--large-screen-only">
-				<a class="mdl-navigation__link" href="summary.html">Summary</a>
-				<a class="mdl-navigation__link" href="guiding.html">Guiding Questions</a>
-				<a class="mdl-navigation__link" href="multiplication.html">Multiplication Frame</a>
-			</nav>
+				<nav class="mdl-navigation mdl-layout--large-screen-only">
+					<a class="mdl-navigation__link" href="summary.html">Summary</a>
+					<a class="mdl-navigation__link" href="guiding.html">Guiding Questions</a>
+					<a class="mdl-navigation__link" href="multiplication.html">Multiplication Frame</a>
+				</nav>
 			</div>
 		</header>
-		<main class="mdl-layout__content">
-			<div class="page-content">
-				
+		<main>
+		<div id="form">
+			<h3>Input values of equation below:</h3>
+				<form action="solution.php" method="get">
+					<!-- Numeric Textfield -->
+					<div class="mdl-textfield mdl-js-textfield" id="number">
+						<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="square">
+						<label class="mdl-textfield__label" for="square">a</label>
+						<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<div id="unknown1">
+						<h3>x^2+</h3>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield" id="number">
+						<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="variable">
+						<label class="mdl-textfield__label" for="variable">b</label>
+						<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<div id="unknown2">
+						<h3>x+</h3>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield" id="number">
+						<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="constant">
+						<label class="mdl-textfield__label" for="constant">c</label>
+						<span class="mdl-textfield__error">Input is not a number!</span>
+					</div>
+					<!-- Colored FAB button -->
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="submit" id="submit-button">
+						<i class="material-icons">done</i>
+					</button>
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="reset" id="reset-button">
+						<i class="material-icons">close</i>
+					</button>
+				</form>
+		</div>
+		<div id="objects">
+			<div id="dragx"  class="squareblue">
+				<center>x^2</center>
 			</div>
-		</main>
-	</div>
+			<div id="dragx" class="rectanglegreen">
+				<center><p>x</p></center>
+			</div>
+			<div id="dragx" class="smallsquareyellow">
+				<center><p>1</p></center>
+			</div>
+		</div>
+	</main>
+	</div>		
+
+</html>
