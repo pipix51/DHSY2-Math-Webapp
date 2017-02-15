@@ -1,0 +1,30 @@
+h1 {
+  animation-duration: 1s;
+  animation-name: slidein;
+  text-align: center;
+}
+
+h6 {
+  animation-duration: 3s;
+  animation-name: slidein;
+  font-size: 30px;
+  text-align: center;
+
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+  
+  ol {
+    font-size: px;
+  }
+
+}
