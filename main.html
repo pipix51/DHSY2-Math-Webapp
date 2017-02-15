@@ -1,13 +1,16 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<link rel="stylesheet" href="style.css">
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 	</head>
 	<!-- Always shows a header, even in smaller screens. -->
 	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-		<header class="mdl-layout__header">
+		<header class="mdl-layout__header" id="navbar">
 			<div class="mdl-layout__header-row">
 			<!-- Title -->
 			<span class="mdl-layout-title">Y2DHS Math Webapp</span>
@@ -21,9 +24,24 @@
 			</nav>
 			</div>
 		</header>
+		<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+			<span class="mdl-layout-title">Y2DHS Math Webapp</span>
+				<nav class="mdl-navigation">
+					<a class="mdl-navigation__link" href="summary.html">Summary</a>
+					<a class="mdl-navigation__link" href="guiding.html">Guiding Questions</a>
+					<a class="mdl-navigation__link" href="multiplication.html">Multiplication Frame</a>
+				</nav>
+		</div>
 		<main class="mdl-layout__content">
 			<div class="page-content">
-				
+			<div id="title">
+				<h1 class="mdl-layout--large-screen-only" id="header">Factorisation by completing the square</h1>
+				<h3 class="mdl-layout--small-screen-only" id="small-header">Factorisation by completing the square</h3>
+			</div>
+			<div id="content">
+				<h2 class="subtitle">How does this app work?</h2><br>
+				<p class="main-content">Lorem ipsum dolor sit amet</p>
 			</div>
 		</main>
 	</div>
+	
