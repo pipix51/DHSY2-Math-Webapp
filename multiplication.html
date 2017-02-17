@@ -41,17 +41,21 @@
 		<div id="form">
 			<h3>Input values of equation below:</h3>
 				<form action="" name="form1">
-					A:<br>
-					<input type="text" name="ap">
-					B:<br>
-					<input type="text" name="bp">
-					C:<br>
-					<input type="text" name="cp">
-				</form>		
-					<input type="button" value="Factorise" onclick="factorise(form1.ap.value,form1.bp.value,form1.cp.value)">
-					<input type="button" value="Refresh" onclick="refresh()">
-					<div id="demo"></div>
-					<canvas id="qw" width="10000" height="10000">
+					<form name="form1" action="">
+A:<br>
+<input type="text" name="ap">
+<br>
+B:<br>
+<input type="text" name="bp">
+<br>
+C:<br>
+<input type="text" name="cp">
+</form>
+<br>
+<input type="button" value="Factorise" onclick="factorise(form1.ap.value,form1.bp.value,form1.cp.value)">
+<input type="button" value="Refresh" onclick="refresh()">
+<div id="demo"></div>
+<canvas id="qw" width="10000" height="10000">
 		</div>
 		<div id="objects">
 			<div id="dragx"  class="squareblue">
