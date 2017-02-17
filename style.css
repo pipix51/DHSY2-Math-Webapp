@@ -1,4 +1,7 @@
-
+html{
+	position: absolute;
+	left: 0px;
+}
 .squareblue {
    width: 210px; 
    height: 210px; 
