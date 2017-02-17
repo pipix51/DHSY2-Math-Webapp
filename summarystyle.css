@@ -17,7 +17,7 @@ h6 {
   ol {
   animation-duration: 1s;
   animation-name: slidein;
-  font-size: 40px;
+  font-size: 30px;
   }
   
   @keyframes slidein {
