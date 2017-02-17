@@ -5,8 +5,6 @@
 }
 
 h6 {
-  animation-duration: 3s;
-  animation-name: slidein;
   font-size: 30px;
   text-align: center;
 
@@ -14,9 +12,7 @@ h6 {
 
 
   
-h8 {
-   animation-duration: 3s;
-  animation-name: slidein;
+ol {
   font-size: 20px;
   text-align: center;
   
