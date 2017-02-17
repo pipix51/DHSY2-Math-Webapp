@@ -1,5 +1,5 @@
-#content {
-	margin-left: 40px;
+body {
+  margin-left: 40px;
 }
 .mdl-layout__container{
 	position: fixed;
@@ -59,13 +59,18 @@
 }
 
 .subtitle{
-	margin-left: 40px;
+	margin-left: 10px;
 	color: #2196F3;
+	text-align: center;
 }
 
 .main-content{
-	margin-left: 40px;
-	font-size: 26px;
+	top: 10px;
+	color: black; 
+	line-height: 50px;
+	font-size: 25px;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
 }
 
 #form {
@@ -87,8 +92,4 @@
 	position: absolute;
 	top: 55px;
 	left: 50px;
-}
-
-body {
-	margin-left: 40px;
 }
