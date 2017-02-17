@@ -12,10 +12,9 @@ h6 {
 
 
   
-ol {
-  font-size: 20px;
-  text-align: center;
-}
+ h8 {
+  font-size: 25px;
+  }
   
   @keyframes slidein {
   from {
