@@ -58,9 +58,10 @@
 }
 
 .main-content{
-	margin-left: 1px;
-	font-size: 26px;
+	text-align: center;
 	position: relative;
+	top: 60px;
+	color: white; 
 }
 
 #form {
