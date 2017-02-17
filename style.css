@@ -2,6 +2,11 @@ body {
 	margin-left: 40px;
 }
 
+.mdl-layout__container{
+	position: fixed;
+	left: 0px;
+}
+
 .squareblue {
    width: 210px; 
    height: 210px; 
