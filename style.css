@@ -82,3 +82,10 @@
 	top: 55px;
 	left: 50px;
 }
+
+body {
+	margin-left: 40px;
+}
+#content {
+	margin-left: 40px;
+}
