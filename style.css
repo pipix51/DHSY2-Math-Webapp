@@ -58,8 +58,7 @@
 }
 
 .main-content{
-	text-align: center;
-	position: relative;
+	text-align: left;
 	top: 10px;
 	color: black; 
 	line-height: 50px;
