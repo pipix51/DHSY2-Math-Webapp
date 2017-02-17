@@ -57,15 +57,17 @@
 						<label class="mdl-textfield__label" for="constant">c</label>
 						<span class="mdl-textfield__error">Input is not a number!</span>
 					</div>
-					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="submit" id="submit-button">
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="submit" id="submit-button" onclick="factorise(form1.ap.value,form1.bp.value,form1.cp.value)">
 						<i class="material-icons">done</i>
 					</button>
-					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="reset" id="reset-button">
+					<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" type="reset" id="reset-button" onclick="refresh()">
 						<i class="material-icons">close</i>
 					</button>
-					<!-- Colored FAB button -->
-					
-				</form>
+				</form>		
+					<input type="button" value="Factorise" onclick="factorise(form1.ap.value,form1.bp.value,form1.cp.value)">
+					<input type="button" value="Refresh" onclick="refresh()">
+					<div id="demo"></div>
+					<canvas id="qw" width="10000" height="10000">
 		</div>
 		<div id="objects">
 			<div id="dragx"  class="squareblue">
