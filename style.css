@@ -1,5 +1,5 @@
-.mdl-js{
-	position: absolute;
+.mdl-layout__container{
+	position: fixed;
 	left: 0px;
 }
 .squareblue {
