@@ -14,11 +14,11 @@ h6 {
 
 
   
-  ol {
-  animation-duration: 1s;
+h8{
+   animation-duration: 3s;
   animation-name: slidein;
-  font-size: 10px;
-  }
+  font-size: 20px;
+  text-align: center;
   
   @keyframes slidein {
   from {
