@@ -35,31 +35,27 @@
 							<main class="mdl-layout__content">
 								<div class="page-content">
 									<div id="content">
-										<form name="form1" action="">
-A:
-											<br>
-												<input type="text" name="ap">
-													<br>
-B:
-														<br>
-															<input type="text" name="bp">
-																<br>
-C:
-																	<br>
-																		<input type="text" name="cp">
-																		</form>
-																		<br>
-																		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="factorise(form1.ap.value,form1.bp.value,form1.cp.value)">
-																			<i class="material-icons">done</i>
-																		</button>
-																		<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="refresh()">
-																			<i class="material-icons">refresh</i>
-																		</button>
-																					<div id="demo"></div>
-																					<canvas id="qw" width="10000" height="10000">
-																					</div>
-																				</main>
-																			</div>
+											<form name="form1" action="">A:
+												<br>
+												<input type="text" name="ap"><br>B:
+												<br>
+												<input type="text" name="bp"><br>C:
+												<br>
+												<input type="text" name="cp">
+											</form>
+										<br>
+										<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="factorise(form1.ap.value,form1.bp.value,form1.cp.value)">
+											<i class="material-icons">done</i>
+										</button>
+										<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="refresh()">
+											<i class="material-icons">refresh</i>
+										</button>
+										<br><br>
+										<div id="demo" style="font-size: 20px;line-height: 50px;}"></div>
+										<canvas id="qw" width="10000" height="10000">
+									</div>
+							</main>
+							</div>
 																			<body>
 																				<script>
 var x1z,x1m,x2z,x2m = 0;
@@ -67,8 +63,11 @@ var x1z,x1m,x2z,x2m = 0;
   var ctx = canvas.getContext("2d");
   ctx.save();
   ctx.setTransform(1, 0, 0, 1, 0, 0);
+  
+//refresh
 function refresh()
-{location.reload(true);}  
+{location.reload(true);}
+  
 /*function factor(m)
   {
   if (m
@@ -92,6 +91,8 @@ i = i + 2;
   if (h > 1) {n[k] = h;}
   return n;
 }*/
+
+//find the roots of equation. Store the numerator and denominator.
 function solve(q,w,e)
   {
   x1z = -w + Math.round(Math.sqrt(w * w- 4 * q * e));
@@ -99,20 +100,24 @@ function solve(q,w,e)
   x2z = -w - Math.round(Math.sqrt(w * w- 4 * q * e));
   x2m = 2 * q;
 }
+//factorise(ax2+bx+c)
 function factorise(a,b,c)
   {
   document.getElementById("demo").innerHTML ="";
-  //ctx.restore();
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  if (a == 0 || a % 1 != 0 || b % 1 != 0 || c % 1 != 0) {document.getElementById("demo").innerHTML ="Error.";return;}
-  if (b*b-4*a*c
-																						<0) {document.getElementById("demo").innerHTML ="Cannot.";return;}
-  if (Math.sqrt(b*b-4*a*c) % 1 != 0) {document.getElementById("demo").innerHTML ="Cannot.";return;}
-  if (a
-																							<0) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"-";
+  ctx.clearRect(0,0,canvas.width,canvas.height);  
+  //judge the condition of a,b,c
+  if (a == 0) {document.getElementById("demo").innerHTML = "Error."+"<br>"+"Please make sure A does not equal to 0.";return;}
+  if (a % 1 != 0 || b % 1 != 0 || c % 1 != 0) {document.getElementById("demo").innerHTML ="Error."+"<br>"+"Please make sure all the coefficients are integer.";return;}
+  if (b*b-4*a*c<0) {document.getElementById("demo").innerHTML ="Cannot factorise."+"<br>"+"Please make sure the discriminant is not smaller than 0.";return;}
+  if (Math.sqrt(b*b-4*a*c) % 1 != 0) {document.getElementById("demo").innerHTML ="Sorry. The function fails to factorise the expression because the discriminant is not perfect square.";return;}
+  //when b=c=0
+  if (a != 1 && b == 0 && c == 0) {document.getElementById("demo").innerHTML =a+"x"+"<sup>2</sup>";}
+  if (a == 1 && b == 0 && c == 0) {document.getElementById("demo").innerHTML ="x"+"<sup>2</sup>";}
+  //ensure a is positive
+  if (a<0) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"-";
   a = -a; b = -b; c = -c; var pin = -1;} else {var pin = 1;}
   solve(a,b,c);
-  
+  //record the result of factorisation
   x1z = x1z / x1m;
   x2z = x2z / x2m;
   var num = 1;
@@ -124,6 +129,8 @@ function factorise(a,b,c)
   x2z = x2z * num;
   x2m = num;
   pin = pin * a/x1m/x2m;
+  //output the result of factorisation
+  if (b!=0 && c!=0){
   if (Math.abs(pin) != 1) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+Math.abs(pin);}
   if (x1z != 0) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"(";}
   if (x1m != 1) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+x1m+"x";} 
@@ -138,7 +145,8 @@ function factorise(a,b,c)
   
   if (x2z < 0) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"+"+ -x2z +")";}
   if (x2z > 0) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"-"+ x2z +")";}
-  
+  }
+  //output the illustration
   ctx.moveTo(0,0);
   var xhg = pin * x1m;lhg = -pin * x1z;xsg = x2m;lsg = -x2z;
   line = xhg * 65 + lhg * 25;shu=xsg * 65 + lsg * 25;
