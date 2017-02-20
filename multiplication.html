@@ -142,7 +142,7 @@ function factorise(a,b,c)
   x2m = num;
   pin = pin * a/x1m/x2m;
   //output the result of factorisation
-  if (b!=0 && c!=0){
+  if (c!=0){
   if (Math.abs(pin) != 1) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+Math.abs(pin);}
   if (x1z != 0) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+"(";}
   if (x1m != 1) {document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML+x1m+"x";} 
