@@ -18,7 +18,7 @@ function drag(obj)
  var po = obj.style.top; 
  var co = obj.style.backgroundColor;
  obj.orig_index=obj.style.zIndex;
- //设置当前对象永远显示在最上层
+
  obj.onmousedown=function (a){
   ii++;
   var div = document.createElement('div');   
@@ -28,9 +28,9 @@ function drag(obj)
 	  div.style.width = obj.style.width;
 	  div.style.backgroundColor = co;
 	  div.style.position = "absolute";
-	  div.style.border = "1px solid #F00";
+	  div.style.border = "0.5px solid #F00";
       div.setAttribute("id", "newD"+ii);
-	  document.body.appendChild(div);
+	  content.appendChild(div);
 	  drag("newD"+ ii);
  //鼠标按下
  this.style.cursor="move";
@@ -51,12 +51,14 @@ function drag(obj)
  d.onmouseup=function (){//鼠标放开
   document.onmousemove=null;
   document.onmouseup = null;
-  obj.style.zIndex = 1;
+  obj.style.zIndex = 100;
   obj.style.cursor="normal";//设置放开的样式
-  var q = Math.round(obj.offsetLeft / 50) * 50;
-  var p = Math.round(obj.offsetTop / 50) * 50;
+  var q = Math.round(obj.offsetLeft / 20) * 20;
+  var p = Math.round(obj.offsetTop / 20) * 20 ;
   obj.style.left = q;
   obj.style.top =  p;
+  if (q < 400 || q > 1200 - obj.offsetWidth) {obj.style.left = qo; obj.style.top = po;}
+  if (p < 40 || p > 840 - obj.offsetHeight) {obj.style.left = qo; obj.style.top = po;}
  }
  } 
 }
@@ -121,18 +123,25 @@ function drag(obj)
 										</button>
 										<br><br>
 										<div id="demo" style="font-size: 20px;line-height: 50px;}"></div>
-										<canvas id="qw" width="1" height="1">
+										<canvas id="qw" width="1" height="1"></canvas>
+<div id="div1" style="display: none; position: absolute; z-index: 100; width:39px; height:39px; left:1200px; top:50px; background-color:#C8FFFF; border:0.5px solid #F00"> </div>										
+<div id="div2" style="display: none; position: absolute; z-index: 101; width:39px; height:19px; left:1200px; top:95px; background-color:#C8FFFF; border:0.5px solid #F00"></div>
+<div id="div3" style="display: none; position: absolute; z-index: 102; width:19px; height:39px; left:1245px; top:50px; background-color:#C8FFFF; border:0.5px solid #F00"></div>
+<div id="div4" style="display: none; position: absolute; z-index: 103; width:19px; height:19px; left:1245px; top:95px; background-color:#C8FFFF; border:0.5px solid #F00"></div>										
+<div id="canv" style="display: none; position: absolute; z-index: 55; width:780px; height:780px; left:400px; top:40px; background-color:#white; border:1px solid black">
 									</div>
 									
 							</main>
 							</div>
-<div id="div1" style="display: none; position:absolute; width:100px; height:100px; left:1000px; top:100px; background-color:#C8FFFF; border:1px solid #F00"> </div>
-<div id="div2" style="display: none; position:absolute; width:100px; height:50px; left:1000px; top:220px; background-color:#C8FFFF; border:1px solid #F00"></div>
-<div id="div3" style="display: none; position:absolute; width:50px; height:100px; left:1120px; top:100px; background-color:#C8FFFF; border:1px solid #F00"></div>
-<div id="div4" style="display: none; position:absolute; width:50px; height:50px; left:1120px; top:220px; background-color:#C8FFFF; border:1px solid #F00"></div>
 
 <script type="text/javascript">
-
+ var tArray = new Array();  
+ for(var k=400;k<=1180;k++){    
+ tArray[k]=new Array();   
+ for(var j=40;j<=820;j++){    
+ tArray[k][j]=0;    
+  }
+ }
  drag("div1");
  drag("div2");
  drag("div3");
@@ -266,6 +275,7 @@ ctx.stroke();
   div2.style.display = "";
   div3.style.display = "";
   div4.style.display = "";
+  canv.style.display = "";
 }
 
 </script>
