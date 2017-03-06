@@ -32,13 +32,13 @@ function drag(obj)
       div.setAttribute("id", "newD"+ii);
 	  content.appendChild(div);
 	  drag("newD"+ ii);
- //鼠标按下
+
  this.style.cursor="move";
- //设置鼠标样式
+
  this.style.zIndex=1000;
   var d=document;
  if(!a) a=window.event;
- //按下时创建一个事件
+
  var x=a.clientX-document.body.scrollLeft-obj.offsetLeft;
 
  var y=a.clientY-document.body.scrollTop-obj.offsetTop;
@@ -53,8 +53,8 @@ function drag(obj)
   document.onmouseup = null;
   obj.style.zIndex = 100;
   obj.style.cursor="normal";
-  var q = Math.round(obj.offsetLeft / 20) * 20;
-  var p = Math.round(obj.offsetTop / 20) * 20 ;
+  var q = Math.round(obj.offsetLeft / 40) * 40;
+  var p = Math.round(obj.offsetTop / 40) * 40 ;
   obj.style.left = q;
   obj.style.top =  p;
   if (q < 400 || q > 1200 - obj.offsetWidth) {obj.style.left = qo; obj.style.top = po;}
@@ -124,11 +124,11 @@ function drag(obj)
 										<br><br>
 										<div id="demo" style="font-size: 20px;line-height: 50px;}"></div>
 										<canvas id="qw" width="1" height="1"></canvas>
-<div id="div1" style="display: none; position: absolute; z-index: 100; width:39px; height:39px; left:1200px; top:50px; background-color:#C8FFFF; border:0.5px solid #F00"> </div>										
-<div id="div2" style="display: none; position: absolute; z-index: 101; width:39px; height:19px; left:1200px; top:95px; background-color:#C8FFFF; border:0.5px solid #F00"></div>
-<div id="div3" style="display: none; position: absolute; z-index: 102; width:19px; height:39px; left:1245px; top:50px; background-color:#C8FFFF; border:0.5px solid #F00"></div>
-<div id="div4" style="display: none; position: absolute; z-index: 103; width:19px; height:19px; left:1245px; top:95px; background-color:#C8FFFF; border:0.5px solid #F00"></div>										
-<div id="canv" style="display: none; position: absolute; z-index: 55; width:780px; height:780px; left:400px; top:40px; background-color:#white; border:1px solid black">
+<div id="div1" style="position: absolute; z-index: 100; width:79px; height:79px; left:1200px; top:50px; background-color:#C8FFFF; border:0.5px solid #F00"> </div>										
+<div id="div2" style="position: absolute; z-index: 101; width:79px; height:39px; left:1200px; top:135px; background-color:#C8FFFF; border:0.5px solid #F00"></div>
+<div id="div3" style="position: absolute; z-index: 102; width:39px; height:79px; left:1285px; top:50px; background-color:#C8FFFF; border:0.5px solid #F00"></div>
+<div id="div4" style="position: absolute; z-index: 103; width:39px; height:39px; left:1285px; top:135px; background-color:#C8FFFF; border:0.5px solid #F00"></div>										
+<div id="canv" style="position: absolute; z-index: 55; width:780px; height:780px; left:400px; top:40px; background-color:#white; border:1px solid black">
 									</div>
 									
 							</main>
